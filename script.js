@@ -1,6 +1,11 @@
 const options = ["Rock", "Paper", "Scissors"];
 const buttons = document.querySelectorAll('button');
-const results = document.querySelector('#results');
+const roundResult = document.querySelector('#round-result');
+const runningScore = document.querySelector('#running-score');
+const endResult = document.querySelector('#end-result');
+
+let score = 0;
+let numOfPlays = 0;
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -14,10 +19,25 @@ function generateResultsMessage(resultIndex, winner, loser) {
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+        endResult.textContent = "";
         let playerSelection = button.id;
         let computerSelection = computerPlay().toLowerCase();
-        console.log(`playerSelection: ${playerSelection}, computerSelection: ${computerSelection}`);
-        playRound(playerSelection, computerSelection);
+        // console.log(`playerSelection: ${playerSelection}, computerSelection: ${computerSelection}`);
+        score += playRound(playerSelection, computerSelection);
+        numOfPlays++;
+
+        runningScore.textContent = `\n Score: ${score}/${numOfPlays}`;
+
+        if(numOfPlays == 5) {
+            if(score >= 3) {
+                endResult.textContent = "Player won!";
+            } else {
+                endResult.textContent = "Computer won!";
+            }
+            score = 0;
+            numOfPlays = 0;
+            endResult.textContent += "\n Score has been reset!";
+        }
     });
 });
 
@@ -62,18 +82,18 @@ function playRound(playerSelection, computerSelection) {
             break;
     }
     
-    console.log(`playerWon: ${playerWon}`);
+    // console.log(`playerWon: ${playerWon}`);
 
     if (playerWon == 2) {
-        results.textContent = "It's a tie!";
+        roundResult.textContent = "It's a tie!";
         return 0;
     } else if(playerWon == 1) {
         // console.log(`You ${resultsArr[1]}! ${playerSelection} beats ${computerSelection}.`);
-        results.textContent = generateResultsMessage(1, playerSelection, computerSelection);
+        roundResult.textContent = generateResultsMessage(1, playerSelection, computerSelection);
         return 1;
     } else if (playerWon == 0){
         // console.log(`You ${resultsArr[0]}! ${computerSelection} beats ${playerSelection}.`);
-        results.textContent = generateResultsMessage(0, computerSelection, playerSelection);
+        roundResult.textContent = generateResultsMessage(0, computerSelection, playerSelection);
         return 0;
     }
 }
