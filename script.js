@@ -1,8 +1,9 @@
 const options = ["Rock", "Paper", "Scissors"];
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('img');
 const roundResult = document.querySelector('#round-result');
 const runningScore = document.querySelector('#running-score');
 const endResult = document.querySelector('#end-result');
+const reset = document.querySelector('#reset');
 
 let score = 0;
 let numOfPlays = 0;
@@ -35,7 +36,7 @@ buttons.forEach((button) => {
             }
             score = 0;
             numOfPlays = 0;
-            // endResult.textContent += "\n Score has been reset!";
+            endResult.textContent += " Press the reset button above to play again.";
         }
     });
 });
@@ -118,5 +119,3 @@ function game() {
 
     console.log(`Score: ${result}/5`);
 }
-
-// game();

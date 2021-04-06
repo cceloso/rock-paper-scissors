@@ -4,29 +4,36 @@ body {
 
 #main-container {
     margin: auto;
-    padding-top: 5%;
-    width: 70%;
+    padding-top: 3%;
+    width: 75%;
     /* background-color: aqua; */
 }
 
-#instructions {
+#instructions, #reset {
     font-style: italic;
     font-weight: bold;
+    font-size: 1.5vw;
 }
 
-/* h1 {
-    font-size: 3vw;
-} */
+#reset {
+    transition: transform 0.5s;
+}
+
+#reset:hover {
+    transform: scale(1.02);
+    color: rgb(112, 112, 112);
+    cursor: pointer;
+}
 
 .column {
     float: left;
 }
 
-#score {
+.left {
     width: 25%;
 }
 
-#result {
+.right {
     width: 75%;
 }
 
@@ -38,19 +45,23 @@ body {
 
 #options {
     text-align: center;
-}
-
-button {
-    background-color: none;
-    /* background-repeat: no-repeat; */
-    border: none;
-    cursor: pointer;
-    outline: none;
+    margin-bottom: 1vw;
 }
 
 img {
     background: transparent;
     background-color: transparent;
-    width: 200px;
+    width: 20%;
     height: auto;
+    cursor: pointer;
+    margin: 1vw 3vw;
+    transition: transform 0.5s;
+}
+
+img:hover {
+    transform: scale(1.15); 
+}
+
+h3, #reset {
+    font-size: 1.75vw;
 }

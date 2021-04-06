@@ -14,26 +14,29 @@
 <body>
     <div id="main-container">
         <h1>&#127918 Rock Paper Scissors</h1>
-        <div id="instructions">
-            &#9876 Choose your weapon. <br>
-            &#127942 First to get 5 points wins!
+        <div class="row">
+            <div id="instructions" class="left column">
+                &#9876 Choose your weapon. <br>
+                &#127942 First to get 5 points wins!
+            </div>
+            <div id="reset" class="right column">
+                ▶️ Reset/Play again
+            </div>
         </div>
         <div class="row">
-            <div id="score" class="column">
+            <div id="score" class="left column">
                 <h3 id="running-score">Score:</h3>
             </div>
-            <div id="result" class="column">
+            <div id="result" class="right column">
                 <h3 id="round-result">Result of round:</h3>
             </div>
         </div>
         <div id="options">
-            <button id="rock"><img class="option-icon" src="rock.png"></button>
-            <button id="paper"><img class="option-icon" src="paper.png"></button>
-            <button id="scissors"><img class="option-icon" src="scissors.png"></button>
+            <img id="rock" class="option-icon" src="rock.png">
+            <img id="paper" class="option-icon" src="paper.png">
+            <img id="scissors"class="option-icon" src="scissors.png">
         </div>
-        <!-- <div id="round-result"></div> -->
-        <!-- <div id="running-score"></div> -->
-        <div id="end-result"></div>
+        <h3 id="end-result"></h3>
     </div>
     <script src="script.js"></script>
 </body>
