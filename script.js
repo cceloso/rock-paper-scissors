@@ -13,7 +13,7 @@ function capitalizeFirstLetter(string) {
 }
 
 function generateResultsMessage(resultIndex, winner, loser) {
-    let resultsArr = ["Lose", "Win"];
+    let resultsArr = ["lose", "win"];
     
     return `Result of round: You ${resultsArr[resultIndex]}! ${capitalizeFirstLetter(winner)} beats ${capitalizeFirstLetter(loser)}.`;
 }

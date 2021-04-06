@@ -2,11 +2,15 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.dark-mode {
+    background-color: #2e3436;
+    color: #ebeaea;
+}
+
 #main-container {
     margin: auto;
-    padding-top: 3%;
-    width: 75%;
-    /* background-color: aqua; */
+    padding-top: 7%;
+    width: 70%;
 }
 
 #instructions, #reset {
@@ -30,11 +34,11 @@ body {
 }
 
 .left {
-    width: 25%;
+    width: 35%;
 }
 
 .right {
-    width: 75%;
+    width: 65%;
 }
 
 .row:after {
