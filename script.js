@@ -119,3 +119,8 @@ function game() {
 
     console.log(`Score: ${result}/5`);
 }
+
+function toggleDarkMode() {
+    let elem = document.body;
+    elem.classList.toggle("dark-mode");
+}
