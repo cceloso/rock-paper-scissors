@@ -14,7 +14,7 @@ function capitalizeFirstLetter(string) {
 function generateResultsMessage(resultIndex, winner, loser) {
     let resultsArr = ["Lose", "Win"];
     
-    return `You ${resultsArr[resultIndex]}! ${capitalizeFirstLetter(winner)} beats ${capitalizeFirstLetter(loser)}.`;
+    return `Result of round: You ${resultsArr[resultIndex]}! ${capitalizeFirstLetter(winner)} beats ${capitalizeFirstLetter(loser)}.`;
 }
 
 buttons.forEach((button) => {
@@ -25,17 +25,17 @@ buttons.forEach((button) => {
         // console.log(`playerSelection: ${playerSelection}, computerSelection: ${computerSelection}`);
         score += playRound(playerSelection, computerSelection);
 
-        runningScore.textContent = `\n Score: ${score}/${numOfPlays}`;
+        runningScore.textContent = `Score: ${score}/${numOfPlays}`;
 
         if(numOfPlays == 5) {
             if(score >= 3) {
-                endResult.textContent = "Player won!";
+                endResult.textContent = "Congratulations! You win! 🎉";
             } else {
-                endResult.textContent = "Computer won!";
+                endResult.textContent = "Aww, you lose. Better luck next time. 😔";
             }
             score = 0;
             numOfPlays = 0;
-            endResult.textContent += "\n Score has been reset!";
+            // endResult.textContent += "\n Score has been reset!";
         }
     });
 });
@@ -84,7 +84,7 @@ function playRound(playerSelection, computerSelection) {
     // console.log(`playerWon: ${playerWon}`);
 
     if (playerWon == 2) {
-        roundResult.textContent = "It's a tie!";
+        roundResult.textContent = "Result of round: It's a tie!";
         return 0;
     } else if(playerWon == 1) {
         // console.log(`You ${resultsArr[1]}! ${playerSelection} beats ${computerSelection}.`);
@@ -111,9 +111,9 @@ function game() {
     }
 
     if(result >= 3) {
-        console.log("Player won!");
+        console.log("Congratulations! You win! &#127881");
     } else {
-        console.log("Computer won!");
+        console.log("Aww, you lose. Better luck next time. &#57432");
     }
 
     console.log(`Score: ${result}/5`);

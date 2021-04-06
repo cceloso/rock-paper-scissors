@@ -1,0 +1,56 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#main-container {
+    margin: auto;
+    padding-top: 5%;
+    width: 70%;
+    /* background-color: aqua; */
+}
+
+#instructions {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* h1 {
+    font-size: 3vw;
+} */
+
+.column {
+    float: left;
+}
+
+#score {
+    width: 25%;
+}
+
+#result {
+    width: 75%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#options {
+    text-align: center;
+}
+
+button {
+    background-color: none;
+    /* background-repeat: no-repeat; */
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+img {
+    background: transparent;
+    background-color: transparent;
+    width: 200px;
+    height: auto;
+}
