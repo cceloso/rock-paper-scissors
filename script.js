@@ -24,7 +24,6 @@ buttons.forEach((button) => {
         let computerSelection = computerPlay().toLowerCase();
         // console.log(`playerSelection: ${playerSelection}, computerSelection: ${computerSelection}`);
         score += playRound(playerSelection, computerSelection);
-        numOfPlays++;
 
         runningScore.textContent = `\n Score: ${score}/${numOfPlays}`;
 
@@ -90,10 +89,12 @@ function playRound(playerSelection, computerSelection) {
     } else if(playerWon == 1) {
         // console.log(`You ${resultsArr[1]}! ${playerSelection} beats ${computerSelection}.`);
         roundResult.textContent = generateResultsMessage(1, playerSelection, computerSelection);
+        numOfPlays++;
         return 1;
     } else if (playerWon == 0){
         // console.log(`You ${resultsArr[0]}! ${computerSelection} beats ${playerSelection}.`);
         roundResult.textContent = generateResultsMessage(0, computerSelection, playerSelection);
+        numOfPlays++;
         return 0;
     }
 }
