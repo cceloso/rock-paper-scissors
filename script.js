@@ -24,7 +24,7 @@ reset.addEventListener('click', () => {
     numOfPlays = 0;
     hasWinner = false;
 
-    runningScore.textContent = `Score: ${playerScore}/${numOfPlays}`;
+    runningScore.textContent = `Your score: ${playerScore}/${numOfPlays}`;
     roundResult.textContent = "";
     endResult.textContent = "";
 });
@@ -40,7 +40,7 @@ buttons.forEach((button) => {
 
             playerScore += playRound(playerSelection, computerSelection);
 
-            runningScore.textContent = `Score: ${playerScore}/${numOfPlays}`;
+            runningScore.textContent = `Your score: ${playerScore}/${numOfPlays}`;
 
             if(playerScore == 5 || (numOfPlays - playerScore == 5)) {
                 if(playerScore >= 5) {
