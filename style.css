@@ -16,7 +16,7 @@ body {
 #instructions, #reset {
     font-style: italic;
     font-weight: bold;
-    font-size: 1.5vw;
+    font-size: 1.4vw;
 }
 
 #reset {
@@ -67,5 +67,5 @@ img:hover {
 }
 
 h3, #reset {
-    font-size: 1.75vw;
+    font-size: 1.6vw;
 }

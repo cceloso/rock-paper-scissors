@@ -5,8 +5,10 @@ const runningScore = document.querySelector('#running-score');
 const endResult = document.querySelector('#end-result');
 const reset = document.querySelector('#reset');
 
-let score = 0;
+let playerScore = 0;
+let computerScore = 0;
 let numOfPlays = 0;
+let hasWinner = false;
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -18,25 +20,38 @@ function generateResultsMessage(resultIndex, winner, loser) {
     return `Result of round: You ${resultsArr[resultIndex]}! ${capitalizeFirstLetter(winner)} beats ${capitalizeFirstLetter(loser)}.`;
 }
 
+// reset.addEventListener('click', () => {
+//     endResult.textContent = "";
+//     playerScore = 0;
+//     numOfPlays = 0;
+// });
+
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        endResult.textContent = "";
-        let playerSelection = button.id;
-        let computerSelection = computerPlay().toLowerCase();
-        // console.log(`playerSelection: ${playerSelection}, computerSelection: ${computerSelection}`);
-        score += playRound(playerSelection, computerSelection);
+        if(hasWinner == true) {
+            button.disabled = true;
+        } else {
+            endResult.textContent = "";
+            let playerSelection = button.id;
+            let computerSelection = computerPlay().toLowerCase();
+            // console.log(`playerSelection: ${playerSelection}, computerSelection: ${computerSelection}`);
+            playerScore += playRound(playerSelection, computerSelection);
 
-        runningScore.textContent = `Score: ${score}/${numOfPlays}`;
+            runningScore.textContent = `Score: ${playerScore}/${numOfPlays}`;
 
-        if(numOfPlays == 5) {
-            if(score >= 3) {
-                endResult.textContent = "Congratulations! You win! 🎉";
-            } else {
-                endResult.textContent = "Aww, you lose. Better luck next time. 😔";
+            // if(numOfPlays == 5) {
+            if(playerScore == 5 || (numOfPlays - playerScore == 5)) {
+                if(playerScore >= 5) {
+                    endResult.textContent = "Congratulations! You win! 🎉";
+                } else {
+                    endResult.textContent = "Aww, you lose. Better luck next time. 😔";
+                }
+                // playerScore = 0;
+                // numOfPlays = 0;
+                hasWinner = true;
+                endResult.textContent += " Press the reset button above to play again.";
             }
-            score = 0;
-            numOfPlays = 0;
-            endResult.textContent += " Press the reset button above to play again.";
+            // console.log(`numOfPlays: ${numOfPlays}, playerScore: ${playerScore}`);
         }
     });
 });
@@ -51,7 +66,7 @@ function playRound(playerSelection, computerSelection) {
 
     switch(playerSelection) {
         case "rock":
-            console.log("Inside rock!");
+            // console.log("Inside rock!");
             if(computerSelection == "paper") {
                 playerWon = 0;
             } else if(computerSelection == "scissors") {
@@ -61,7 +76,7 @@ function playRound(playerSelection, computerSelection) {
             }
             break;
         case "paper":
-            console.log("Inside paper!");
+            // console.log("Inside paper!");
             if(computerSelection == "scissors") {
                 playerWon = 0;
             } else if(computerSelection == "rock") {
@@ -71,7 +86,7 @@ function playRound(playerSelection, computerSelection) {
             }
             break;
         case "scissors":
-            console.log("Inside scissors!");
+            // console.log("Inside scissors!");
             if(computerSelection == "rock") {
                 playerWon = 0;
             } else if(computerSelection == "paper") {
