@@ -1,12 +1,11 @@
 const options = ["Rock", "Paper", "Scissors"];
 const buttons = document.querySelectorAll('img');
-const roundResult = document.querySelector('#round-result');
 const runningScore = document.querySelector('#running-score');
+const roundResult = document.querySelector('#round-result');
 const endResult = document.querySelector('#end-result');
 const reset = document.querySelector('#reset');
 
 let playerScore = 0;
-let computerScore = 0;
 let numOfPlays = 0;
 let hasWinner = false;
 
@@ -20,11 +19,16 @@ function generateResultsMessage(resultIndex, winner, loser) {
     return `Result of round: You ${resultsArr[resultIndex]}! ${capitalizeFirstLetter(winner)} beats ${capitalizeFirstLetter(loser)}.`;
 }
 
-// reset.addEventListener('click', () => {
-//     endResult.textContent = "";
-//     playerScore = 0;
-//     numOfPlays = 0;
-// });
+reset.addEventListener('click', () => {
+    
+    playerScore = 0;
+    numOfPlays = 0;
+    hasWinner = false;
+
+    runningScore.textContent = `Score: ${playerScore}/${numOfPlays}`;
+    roundResult.textContent = "";
+    endResult.textContent = "";
+});
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
