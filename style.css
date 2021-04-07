@@ -1,4 +1,4 @@
-body {
+body, #toggle {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -31,6 +31,27 @@ body {
 
 .column {
     float: left;
+}
+
+#heading {
+    width: 85%;
+}
+
+#toggle {
+    float: right;
+    width: 15%;
+    background-color: ghostwhite;
+    border-color: transparent;
+    border-radius: 20px;
+    padding: 0.6vw;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.1vw;
+}
+
+#toggle:hover {
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .left {

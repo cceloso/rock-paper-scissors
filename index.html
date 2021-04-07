@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Rock Paper Scissors</title>
-    <meta charset="UTF-8">
+    <head>
+        <title>Rock Paper Scissors</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet"> 
+    </head>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet"> 
-</head>
-
-<body>
-    <div id="main-container">
-        <!-- <button onclick="toggleDarkMode()">Toggle dark mode</button> -->
-        <h1>&#127918 Rock Paper Scissors</h1>
-        <div class="row">
-            <div id="instructions" class="left column">
-                &#9876 Choose your weapon. <br>
-                &#127942 First to get 5 points wins!
+    <body>
+        <div id="main-container">
+            <div class="row">
+                <h1 id="heading" class="column">&#127918 Rock Paper Scissors</h1>
+                <button id="toggle" onclick="toggleDarkMode()">Toggle dark mode</button>
             </div>
-            <div id="reset" class="right column">
-                ▶️ Reset/Play again
+            <div class="row">
+                <div id="instructions" class="left column">
+                    &#9876 Choose your weapon. <br>
+                    &#127942 First to get 5 points wins!
+                </div>
+                <div id="reset" class="right column">
+                    ▶️ Reset/Play again
+                </div>
             </div>
+            <div class="row">
+                <div id="score" class="left column">
+                    <h3 id="running-score">Score:</h3>
+                </div>
+                <div id="result" class="right column">
+                    <h3 id="round-result">Result of round:</h3>
+                </div>
+            </div>
+            <div id="options">
+                <img id="rock" class="option-icon" src="rock.png">
+                <img id="paper" class="option-icon" src="paper.png">
+                <img id="scissors"class="option-icon" src="scissors.png">
+            </div>
+            <h3 id="end-result"></h3>
         </div>
-        <div class="row">
-            <div id="score" class="left column">
-                <h3 id="running-score">Score:</h3>
-            </div>
-            <div id="result" class="right column">
-                <h3 id="round-result">Result of round:</h3>
-            </div>
-        </div>
-        <div id="options">
-            <img id="rock" class="option-icon" src="rock.png">
-            <img id="paper" class="option-icon" src="paper.png">
-            <img id="scissors"class="option-icon" src="scissors.png">
-        </div>
-        <h3 id="end-result"></h3>
-    </div>
-    <script src="script.js"></script>
-</body>
-
+        <script src="script.js"></script>
+    </body>
 </html>
